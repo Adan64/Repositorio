@@ -11,7 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
     inputMensaje.addEventListener('blur',validar);
 
     function validar(e) {
-        console.log(e.target.value);
+        //trim elimina los espacios en blanco, importante poner en los formularios para validar
+        if(e.target.value.trim() ===''){
+            
+        }else{
+
+        }
     }
 
 
