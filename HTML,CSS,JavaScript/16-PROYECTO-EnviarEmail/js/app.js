@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const spinner = document.querySelector('#spinner');
 
     // Asignar eventos
-    inputEmail.addEventListener('input', validar);
+    inputEmail.addEventListener('blur', validar);
     inputAsunto.addEventListener('input', validar);
     inputMensaje.addEventListener('input', validar);
 
@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function validar(e) {
         if(e.target.value.trim() === '') {
+            console.log(e.target.parentElement)
             mostrarAlerta(`El Campo ${e.target.id} es obligatorio`, e.target.parentElement);
             email[e.target.name] = '';
             comprobarEmail();
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if(e.target.id === 'email' && !validarEmail(e.target.value)) {
+          
             mostrarAlerta('El email no es válido', e.target.parentElement);
             email[e.target.name] = '';
             comprobarEmail();
